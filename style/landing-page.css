@@ -155,10 +155,22 @@ nav .backdrop {
   border-radius: 50%;
   z-index: 50;
   position: absolute;
-  /* transition: all ease 1s; */
+  transition: all ease 0.4s;
 }
 .right.form-active .btns {
-  bottom: 3vh;
+  transform: translateY(31vh);
+}
+.right.form-active .btn-wrapper {
+  rotate: 0deg;
+}
+.form-active .login-btn,
+.signup-mode .signup-btn {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.signup-mode .login-btn {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .btns:hover .btn-wrapper {
@@ -239,21 +251,49 @@ nav .backdrop {
 }
 
 .right .forms {
-  opacity: 0.5;
-  background: #0032;
-  /* background: transparent; */
+  opacity: 0;
+  background: #0011;
   backdrop-filter: blur(20px);
   border: 1px solid var(--primary-txt-clr);
-  border-radius: 1vw;
+  border-radius: 1vw 1vw 2.5vw 2.5vw;
   padding: 2vw;
   height: 90%;
   width: 70%;
   transform: translateX(150%);
-  transition: all ease 1s;
+  transition: all ease 0.4s;
+  overflow: hidden;
 }
 .right.form-active .forms {
   opacity: 1;
   transform: translateX(0%);
+}
+.forms .close-icon {
+  position: absolute;
+  right: 1vw;
+  top: 1vw;
+  z-index: 10;
+}
+
+.forms .inner-box {
+  width: 85%;
+  height: 80%;
+  position: absolute;
+  transition: all ease 0.4s;
+}
+.forms .login-form {
+  left: 2vw;
+}
+.signup-mode .login-form {
+  left: -25vw;
+  opacity: 0;
+}
+.forms .signup-form {
+  right: -25vw;
+  opacity: 0;
+}
+.signup-mode .signup-form {
+  right: 2vw;
+  opacity: 1;
 }
 
 #cursor {

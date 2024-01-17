@@ -9,14 +9,14 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
     <link rel="stylesheet" href="style/resets.css" />
-    <link rel="stylesheet" href="style/index.css" />
+    <link rel="stylesheet" href="style/landing-page.css" />
   </head>
   <body class="">
     <div class="main-container">
       <div id="cursor"></div>
       <nav>
         <div class="backdrop"></div>
-        <div class="nav-left">LOGO</div>
+        <div class="nav-left">DevoHub</div>
         <div class="nav-right">
           <div class="theme-toggle-wrapper">
             <div class="theme-toggle">
@@ -41,20 +41,11 @@
             <span class="typed-text"></span>
           </h3>
         </div>
-        <div class="right form-active">
+
+        <!-- <div class="right form-active signup-mode"> -->
+        <div class="right">
           <div class="btns">
-            <div class="btn-wrapper">
-              <div class="btn">
-                <h6>Sign-Up</h6>
-                <div class="shine">
-                  <div class="s1">
-                    <div class="thick"></div>
-                    <div class="thin"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="btn-wrapper">
+            <div class="btn-wrapper login-btn">
               <div class="btn">
                 <h6>Log-In</h6>
                 <div class="shine">
@@ -65,31 +56,32 @@
                 </div>
               </div>
             </div>
+
+            <div class="btn-wrapper signup-btn">
+              <div class="btn">
+                <h6>Sign-Up</h6>
+                <div class="shine">
+                  <div class="s1">
+                    <div class="thick"></div>
+                    <div class="thin"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+
           <div class="forms">
-            <div class="login">Login</div>
+            <span class="material-symbols-outlined close-icon"> close </span>
+            <div class="login-form inner-box">Log-in</div>
+            <div class="signup-form inner-box">Sign-up</div>
           </div>
         </div>
       </main>
     </div>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script>
-      var typed = new Typed(".typed-text", {
-        strings: [
-          "Share Posts",
-          "Collaborate",
-          "Showcase your Portfolio",
-          "Personalized feed",
-          "Connect with Professionals",
-        ],
-        typeSpeed: 100,
-        shuffle: true,
-        loop: true,
-        loopCount: Infinity,
-      });
-    </script>
     <script src="js/cursor.js"></script>
     <script src="js/global.js"></script>
     <script src="js/theme.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="js/landing-page.js"></script>
   </body>
 </html>
