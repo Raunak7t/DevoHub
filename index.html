@@ -10,13 +10,18 @@
     />
     <link rel="stylesheet" href="style/resets.css" />
     <link rel="stylesheet" href="style/landing-page.css" />
+    <link rel="stylesheet" href="style/forms.css" />
   </head>
   <body class="">
     <div class="main-container">
       <div id="cursor"></div>
       <nav>
         <div class="backdrop"></div>
-        <div class="nav-left">DevoHub</div>
+        <div class="nav-left">
+          <div class="logo">
+            <span class="text">DevoHub</span>
+          </div>
+        </div>
         <div class="nav-right">
           <div class="theme-toggle-wrapper">
             <div class="theme-toggle">
@@ -42,7 +47,6 @@
           </h3>
         </div>
 
-        <!-- <div class="right form-active signup-mode"> -->
         <div class="right">
           <div class="btns">
             <div class="btn-wrapper login-btn">
@@ -72,14 +76,64 @@
 
           <div class="forms">
             <span class="material-symbols-outlined close-icon"> close </span>
-            <div class="login-form inner-box">Log-in</div>
-            <div class="signup-form inner-box">Sign-up</div>
+            <form class="login-form inner-box">
+              <div class="top-header">
+                <h2>Hello, Again!</h2>
+                <small>We are happy to have you back.</small>
+              </div>
+              <div class="input-group">
+                <div class="input-field">
+                  <input type="text" class="input-box" id="logEmail" required />
+                  <label for="logEmail">E-mail</label>
+                </div>
+                <div class="input-field">
+                  <input
+                    type="password"
+                    class="input-box"
+                    id="logPassword"
+                    required
+                  />
+                  <label for="logPassword">Password</label>
+                </div>
+                <div class="input-field">
+                  <input type="submit" class="input-submit" value="Log In" />
+                </div>
+              </div>
+            </form>
+            <form class="signup-form inner-box">
+              <div class="top-header">
+                <h2>Sign Up, Now!</h2>
+                <small>We are happy to have you with us.</small>
+              </div>
+              <div class="input-group">
+                <div class="input-field">
+                  <input type="text" class="input-box" id="regName" required />
+                  <label for="regName">Name</label>
+                </div>
+                <div class="input-field">
+                  <input type="text" class="input-box" id="RegEmail" required />
+                  <label for="RegEmail">E-mail</label>
+                </div>
+                <div class="input-field">
+                  <input
+                    type="password"
+                    class="input-box"
+                    id="RegPassword"
+                    required
+                  />
+                  <label for="RegPassword">Password</label>
+                </div>
+                <div class="input-field">
+                  <input type="submit" class="input-submit" value="Sign Up" />
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </main>
     </div>
-    <script src="js/cursor.js"></script>
     <script src="js/global.js"></script>
+    <script src="js/cursor.js"></script>
     <script src="js/theme.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="js/landing-page.js"></script>

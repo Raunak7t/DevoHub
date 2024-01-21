@@ -52,10 +52,10 @@ nav .backdrop {
 }
 
 .theme-toggle-wrapper {
-  padding: 2px 3px;
+  padding: 3px;
   background-color: var(--primary-txt-clr);
-  width: 45px;
-  height: 25px;
+  width: 50px;
+  height: 28px;
   border-radius: 20vw;
 }
 .theme-toggle {
@@ -64,8 +64,7 @@ nav .backdrop {
   width: 100%;
   position: relative;
   display: flex;
-  justify-content: center;
-  gap: 2px;
+  justify-content: space-around;
   align-items: center;
 }
 .theme-toggle .icon {
@@ -86,8 +85,8 @@ nav .backdrop {
 .theme-toggle .circle {
   z-index: 0;
   background-color: var(--tertiary-bg);
-  height: 21px;
-  width: 21px;
+  height: 22px;
+  width: 22px;
   border-radius: 100%;
   position: absolute;
   top: 0;
@@ -158,14 +157,15 @@ nav .backdrop {
   transition: all ease 0.4s;
 }
 .right.form-active .btns {
-  transform: translateY(31vh);
+  transform: translateY(32vh);
 }
 .right.form-active .btn-wrapper {
   rotate: 0deg;
+  scale: 0.9;
 }
 .form-active .login-btn,
 .signup-mode .signup-btn {
-  opacity: 0.5;
+  opacity: 0.4;
   pointer-events: none;
 }
 .signup-mode .login-btn {
@@ -175,6 +175,9 @@ nav .backdrop {
 
 .btns:hover .btn-wrapper {
   rotate: -10deg;
+}
+.form-active .btns:hover .btn-wrapper {
+  rotate: 0deg;
 }
 .btn-wrapper {
   display: inline-block;
@@ -252,13 +255,13 @@ nav .backdrop {
 
 .right .forms {
   opacity: 0;
-  background: #0011;
-  backdrop-filter: blur(20px);
+  background: #0032;
+  backdrop-filter: blur(15px);
   border: 1px solid var(--primary-txt-clr);
-  border-radius: 1vw 1vw 2.5vw 2.5vw;
+  border-radius: 1vw 1vw 2vw 2vw;
   padding: 2vw;
-  height: 90%;
-  width: 70%;
+  height: 91%;
+  width: 67%;
   transform: translateX(150%);
   transition: all ease 0.4s;
   overflow: hidden;
@@ -279,21 +282,75 @@ nav .backdrop {
   height: 80%;
   position: absolute;
   transition: all ease 0.4s;
+  font-size: 1.3vw;
 }
 .forms .login-form {
   left: 2vw;
 }
 .signup-mode .login-form {
   left: -25vw;
-  opacity: 0;
 }
 .forms .signup-form {
   right: -25vw;
-  opacity: 0;
 }
 .signup-mode .signup-form {
   right: 2vw;
-  opacity: 1;
+}
+.top-header {
+  text-align: center;
+  margin: 30px 0;
+}
+.top-header h2 {
+  margin-bottom: 1vh;
+}
+.input-group {
+  width: 100%;
+}
+.input-field {
+  margin: 12px 0;
+  position: relative;
+}
+.input-box {
+  font-size: 1.3vw;
+  background: #ffffffd8;
+  color: black;
+  width: 100%;
+  height: 2.3em;
+  border: none;
+  border-radius: 10px;
+  padding: 7px 45px 0 20px;
+  outline: none;
+}
+.input-field label {
+  color: #191a23;
+  position: absolute;
+  left: 7%;
+  top: 20%;
+  transition: 0.3s ease-in-out;
+}
+.input-box:focus ~ label,
+.input-box:valid ~ label {
+  top: 0px;
+  font-size: 0.9vw;
+  font-weight: 600;
+}
+.input-submit {
+  width: 100%;
+  height: 2.3em;
+  border: none;
+  font-weight: 550;
+  font-size: 1.3vw;
+  border-radius: 10px;
+  background: var(--accent-clr);
+  color: #000;
+  box-shadow: 0px 4px 20px rgba(62, 9, 9, 0.144);
+  cursor: pointer;
+  transition: 0.4s;
+  margin-top: 2vh;
+}
+.input-submit:hover {
+  opacity: 0.6;
+  box-shadow: 0px 4px 20px rgba(62, 9, 9, 0.32);
 }
 
 #cursor {
