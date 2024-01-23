@@ -165,7 +165,7 @@ nav .backdrop {
 }
 .form-active .login-btn,
 .signup-mode .signup-btn {
-  opacity: 0.4;
+  opacity: 0;
   pointer-events: none;
 }
 .signup-mode .login-btn {
@@ -279,7 +279,7 @@ nav .backdrop {
 
 .forms .inner-box {
   width: 85%;
-  height: 80%;
+  height: 93%;
   position: absolute;
   transition: all ease 0.4s;
   font-size: 1.3vw;
@@ -351,6 +351,16 @@ nav .backdrop {
 .input-submit:hover {
   opacity: 0.6;
   box-shadow: 0px 4px 20px rgba(62, 9, 9, 0.32);
+}
+.opt {
+  /* background: grey; */
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  padding-inline: 1.1rem;
+}
+.signup-form .opt {
+  right: 0;
 }
 
 #cursor {
