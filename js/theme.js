@@ -1,9 +1,9 @@
-const button = document.querySelector(".theme-toggle");
+const themeBtn = document.querySelector(".theme-toggle");
 
 let lsData = localStorage.getItem("lightmode");
 if (!lsData) localStorage.setItem("lightmode", false);
 
-button.addEventListener("click", function () {
+themeBtn.addEventListener("click", function () {
   let d = localStorage.getItem("lightmode");
   if (d == "false") {
     localStorage.setItem("lightmode", true);

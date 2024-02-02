@@ -107,7 +107,10 @@ nav .backdrop {
 .hero > .left {
   padding-left: 7vw;
   width: 60%;
-  font-size: 3.5vw;
+  font-size: 4vw;
+}
+.hero > .left h1 {
+  font-family: "Lilita One", sans-serif;
 }
 .hero > .left .reveal span {
   color: transparent;
@@ -125,13 +128,16 @@ nav .backdrop {
 }
 .hero > .left .reveal h3 span {
   font-size: 3.5vw;
-  font-family: cursive;
+  font-family: "Kalam", cursive;
   animation-delay: 1.4s;
   animation-direction: alternate;
   animation-iteration-count: 4;
   margin-left: 8vw;
   background-color: transparent;
   -webkit-text-stroke: var(--primary-txt-clr) 1px;
+}
+.light .left .reveal h3 span {
+  -webkit-text-stroke: var(--primary-txt-clr) 2px;
 }
 .hero .left .typed {
   font-size: 3vw;

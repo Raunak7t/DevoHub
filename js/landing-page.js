@@ -37,6 +37,10 @@ formCloseBtn.addEventListener("click", () => {
 
 // bg image changer
 
+themeBtn.addEventListener("click", function () {
+  location.reload();
+});
+
 let root, items, slider;
 
 if (localStorage.getItem("lightmode") == "true") {
@@ -48,7 +52,6 @@ if (localStorage.getItem("lightmode") == "true") {
 }
 
 items = slider.querySelectorAll(".item");
-console.log(items);
 
 let countItem = items.length;
 let itemActive = 0;

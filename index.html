@@ -10,6 +10,10 @@
     />
     <link rel="stylesheet" href="style/resets.css" />
     <link rel="stylesheet" href="style/landing-page.css" />
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
   </head>
   <body class="">
     <div class="main-container">
@@ -114,14 +118,14 @@
                   <label for="regName">Name</label>
                 </div>
                 <div class="input-field">
-                  <input type="text" class="input-box" id="RegEmail" required />
+                  <input type="text" class="input-box" id="regEmail" required />
                   <label for="RegEmail">E-mail</label>
                 </div>
                 <div class="input-field">
                   <input
                     type="password"
                     class="input-box"
-                    id="RegPassword"
+                    id="regPassword"
                     required
                   />
                   <label for="RegPassword">Password</label>
@@ -179,5 +183,8 @@
     <script src="js/theme.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="js/landing-page.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/sign-up.js"></script>
+    <script src="js/log-in.js"></script>
   </body>
 </html>
