@@ -15,9 +15,7 @@ button.addEventListener("click", function () {
 });
 
 function checkLightMode() {
-  console.log("checked");
   if (localStorage.getItem("lightmode") == "true") {
-    console.log("applied");
     document.body.classList.add("light");
   }
 }

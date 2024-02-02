@@ -1,3 +1,5 @@
+// typed text animation
+
 var typed = new Typed(".typed-text", {
   strings: [
     "Share Posts",
@@ -11,6 +13,8 @@ var typed = new Typed(".typed-text", {
   loop: true,
   loopCount: Infinity,
 });
+
+// login signup form
 
 const formSide = document.querySelector(".right");
 const buttons = document.querySelectorAll(".btn-wrapper");
@@ -30,3 +34,45 @@ buttons.forEach((btn) => {
 formCloseBtn.addEventListener("click", () => {
   formSide.classList.remove("form-active", "signup-mode");
 });
+
+// bg image changer
+
+let root, items, slider;
+
+if (localStorage.getItem("lightmode") == "true") {
+  root = document.querySelector(".light");
+  slider = document.querySelector(".slider-light");
+} else {
+  root = document.querySelector(":root");
+  slider = document.querySelector(".slider-dark");
+}
+
+items = slider.querySelectorAll(".item");
+console.log(items);
+
+let countItem = items.length;
+let itemActive = 0;
+
+let refreshInterval = setInterval(() => {
+  itemActive = itemActive + 1;
+  if (itemActive >= countItem) {
+    itemActive = 0;
+  }
+  slide();
+}, 3000);
+
+items.forEach((item, index) => {
+  item.addEventListener("click", () => {
+    itemActive = index;
+    slide();
+  });
+});
+
+function slide() {
+  let itemActiveOld = slider.querySelector(".item.active");
+  itemActiveOld.classList.remove("active");
+  items[itemActive].classList.add("active");
+
+  let imgURL = items[itemActive].querySelector("img").src;
+  root.style.setProperty("--bg-img", `url(${imgURL})`);
+}
