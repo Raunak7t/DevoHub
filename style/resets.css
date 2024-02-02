@@ -4,8 +4,8 @@
   --primary-bg: #2c2c3e;
   --secondary-bg: #22213d;
   --tertiary-bg: #020214;
-  --accent-clr: #74ceff;
-  --accent-clr-2: #ec74ff;
+  --accent-clr: #8ad5fd;
+  --accent-clr-2: #ee89fe;
 }
 .light {
   --primary-txt-clr: #111;
@@ -13,8 +13,8 @@
   --primary-bg: #fff;
   --secondary-bg: #ddd;
   --tertiary-bg: #bbb;
-  --accent-clr: #ec74ff;
-  --accent-clr-2: #74ceff;
+  --accent-clr: #dd3ddf;
+  --accent-clr-2: #304a91;
 }
 
 * {

@@ -102,11 +102,11 @@ nav .backdrop {
   display: flex;
   align-items: center;
   height: 80vh;
-  font-size: 2.4vw;
 }
 .hero > .left {
   padding-left: 10vw;
   width: 60%;
+  font-size: 3.5vw;
 }
 .hero > .left .reveal span {
   color: transparent;
@@ -114,23 +114,26 @@ nav .backdrop {
   background-clip: text;
   -webkit-background-clip: text;
   background-image: linear-gradient(
-    to left,
-    var(--primary-txt-clr),
-    var(--primary-txt-clr)
+    135deg,
+    var(--accent-clr),
+    var(--accent-clr-2)
   );
   background-size: 0%;
   background-repeat: no-repeat;
   animation: reveal-text 0.7s 0.7s linear 1 forwards;
 }
 .hero > .left .reveal h3 span {
+  font-size: 3.5vw;
+  font-family: cursive;
   animation-delay: 1.4s;
   animation-direction: alternate;
-  animation-iteration-count: 2;
-  margin-left: 12vw;
+  animation-iteration-count: 4;
+  margin-left: 8vw;
   background-color: transparent;
   -webkit-text-stroke: var(--primary-txt-clr) 1px;
 }
 .hero .left .typed {
+  font-size: 3vw;
   margin-top: 7vh;
   opacity: 0.7;
 }
@@ -150,6 +153,7 @@ nav .backdrop {
   position: relative;
 }
 .hero > .right .btns {
+  font-size: 2.4vw;
   width: fit-content;
   border-radius: 50%;
   z-index: 50;
