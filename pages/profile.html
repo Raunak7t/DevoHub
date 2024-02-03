@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevoHub | Profile</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="../style/resets.css" />
+    <link rel="stylesheet" href="../style/profile.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
+  </head>
+  <body class="">
+    <nav>
+      <div class="backdrop"></div>
+      <div class="nav-left">
+        <div class="logo">
+          <span class="text">DevoHub</span>
+        </div>
+      </div>
+      <div class="nav-right">
+        <div class="theme-toggle-wrapper">
+          <div class="theme-toggle">
+            <div class="circle"></div>
+            <span class="material-symbols-outlined icon moon"> dark_mode </span>
+            <span class="material-symbols-outlined icon sun"> light_mode </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <header class="header">
+        <h1 class="title">Let's Find friends</h1>
+      </header>
+      <main>
+        <div id="app">
+          <div class="searchbar-container active">
+            <input
+              type="search"
+              name="user-input"
+              id="input"
+              placeholder="Enter username..."
+              required
+            />
+            <div class="error">
+              <p id="no-results">no search results</p>
+            </div>
+            <button class="btn-search" id="submit">Search</button>
+          </div>
+          <div class="profile-container">
+            <div class="profile-content">
+              <div class="profile-header">
+                <img id="avatar" src="#" alt="" />
+                <div class="profile-info-wrapper">
+                  <div class="profile-name">
+                    <h2 id="name"></h2>
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      id="user"
+                    ></a>
+                  </div>
+                  <p id="date"></p>
+                </div>
+              </div>
+              <p id="bio"></p>
+              <div class="profile-stats-wrapper">
+                <div class="profile-stat">
+                  <p class="stat-title">Repos</p>
+                  <p id="repos" class="stat-value"></p>
+                </div>
+                <div class="profile-stat">
+                  <p class="stat-title">Followers</p>
+                  <p id="followers" class="stat-value"></p>
+                </div>
+                <div class="profile-stat">
+                  <p class="stat-title">Following</p>
+                  <p id="following" class="stat-value"></p>
+                </div>
+              </div>
+              <div class="profile-bottom-wrapper">
+                <div class="profile-info">
+                  <div class="bottom-icons">
+                    <img src="./assets/images/location-icon.svg" alt="" />
+                  </div>
+                  <p id="location"></p>
+                </div>
+                <div class="profile-info">
+                  <div class="bottom-icons">
+                    <img src="./assets/images/website-icon.svg" alt="" />
+                  </div>
+                  <a href="#" id="page"></a>
+                </div>
+                <div class="profile-info">
+                  <div class="bottom-icons">
+                    <img src="./assets/images/twitter-icon.svg" alt="" />
+                  </div>
+                  <a href="#" id="twitter"></a>
+                </div>
+                <div class="profile-info">
+                  <div class="bottom-icons">
+                    <img src="./assets/images/company-icon.svg" alt="" />
+                  </div>
+                  <p id="company"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/profile.js"></script>
+  </body>
+</html>
