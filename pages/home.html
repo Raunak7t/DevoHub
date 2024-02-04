@@ -9,34 +9,27 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
     <link rel="stylesheet" href="../style/resets.css" />
+    <link rel="stylesheet" href="../style/nav.css" />
     <link rel="stylesheet" href="../style/home.css" />
-    <script
-      src="https://kit.fontawesome.com/d75aaffadf.js"
-      crossorigin="anonymous"
-    ></script>
+
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
   </head>
   <body>
-    <nav>
+    <div class="header-nav">
       <div class="nav-left">
-        <p>Logo</p>
-        <img src="images/.png" class="logo" />
-        <ul>
-          <li><img src="images/notification.png" /></li>
-          <li><img src="images/inbox.png" /></li>
-          <li><img src="images/video.png" /></li>
-        </ul>
-      </div>
-      <div class="nav-right">
-        <div class="search-box">
-          <img src="images/search.png" />
-          <input type="text" placeholder="Search" />
+        <span class="material-symbols-outlined menu"> menu </span>
+        <div class="logo">
+          <span class="text">DevoHub</span>
         </div>
       </div>
-      <div class="nav-user-icon">
+      <label class="search-bar" for="search-box">
+        <span class="material-symbols-outlined"> search </span>
+        <input type="text" id="search-box" placeholder="Search" />
+      </label>
+      <div class="nav-right">
         <div class="theme-toggle-wrapper">
           <div class="theme-toggle">
             <div class="circle"></div>
@@ -44,35 +37,94 @@
             <span class="material-symbols-outlined icon sun"> light_mode </span>
           </div>
         </div>
-        <a href="profile.html">
+        <div class="nav-user-icon online" onclick="settingsMenuToggle()">
           <img src="images/profile-pic.png" />
-        </a>
-      </div>
-    </nav>
-
-    <div class="container">
-      <!-- Left Sidebar -->
-      <div class="left-siderbar">
-        <div class="imp-links">
-          <a href="#"><img src="images/news.png" />Trending Post</a>
-          <a href="#"><img src="images/friends.png" />Friends</a>
-          <a href="#"><img src="images/group.png" />Group</a>
-          <a href="#"><img src="images/watch.png" />Watch</a>
-          <a href="#">See More</a>
         </div>
-        <div class="shortcut-links">
-          <p>Your Shortcuts</p>
-          <a href="#"><img src="images/shortcut-1.png" />Web Developer</a>
-          <a href="#"><img src="images/shortcut-2.png" />Web Design Course</a>
+      </div>
+    </div>
+
+    <div class="setting-menu">
+      <div class="setting-menu-inner">
+        <div class="user-profile">
+          <img src="images/profile-pic.png" />
+          <div>
+            <p>7he_sachin</p>
+            <a href="#">See your profile</a>
+          </div>
+        </div>
+        <div class="user-profile">
+          <img src="images/feedback.png" />
+          <div>
+            <p>Give Feedback</p>
+            <a href="#">Help us to improve new design</a>
+          </div>
+        </div>
+        <div class="setting-links">
+          <img src="images/setting.png" class="settings-icon" />
           <a href="#"
-            ><img src="images/shortcut-3.png" />Artificial Intelligence</a
-          >
-          <a href="#"><img src="images/shortcut-4.png" />Finance</a>
+            >Setting & Privacy <img src="images/arrow.png" width="10px"
+          /></a>
+        </div>
+        <div class="setting-links">
+          <img src="images/help.png" class="settings-icon" />
+          <a href="#"
+            >Help & Support <img src="images/arrow.png" width="10px"
+          /></a>
+        </div>
+        <div class="setting-links">
+          <img src="images/display.png" class="settings-icon" />
+          <a href="#"
+            >Display & Accessibility <img src="images/arrow.png" width="10px"
+          /></a>
+        </div>
+        <div class="setting-links">
+          <img src="images/logout.png" class="settings-icon" />
+          <a href="#">Logout <img src="images/arrow.png" width="10px" /></a>
         </div>
       </div>
+    </div>
 
-      <!-- Main Content -->
-      <div class="main">
+    <aside>
+      <span class="material-symbols-outlined close-menu"> close </span>
+      <!-- <div class="logo"><span class="text">DevoHub</span></div> -->
+      <nav class="nav-links">
+        <div class="nav-link">
+          <span class="material-symbols-outlined"> dashboard </span>
+          <h4>Feed</h4>
+        </div>
+        <div class="nav-link active">
+          <span class="material-symbols-outlined"> groups_3 </span>
+          <h4>Users</h4>
+        </div>
+        <div class="nav-link">
+          <span class="material-symbols-outlined"> receipt_long </span>
+          <h4>Orders</h4>
+        </div>
+        <div class="nav-link">
+          <span class="material-symbols-outlined"> monitoring </span>
+          <h4>Analaytics</h4>
+        </div>
+        <div class="nav-link">
+          <span class="material-symbols-outlined"> mail </span>
+          <h4>Messages</h4>
+        </div>
+        <div class="nav-link">
+          <span class="material-symbols-outlined"> settings </span>
+          <h4>Settings</h4>
+        </div>
+        <div class="nav-link">
+          <span class="material-symbols-outlined"> add </span>
+          <h4>Add Product</h4>
+        </div>
+        <div class="nav-link">
+          <span class="material-symbols-outlined"> logout </span>
+          <h4>Log-out</h4>
+        </div>
+      </nav>
+    </aside>
+
+    <main>
+      <div class="left">
         <div class="story-gallery">
           <div class="story add">
             <img src="images/upload.png" />
@@ -94,100 +146,173 @@
             <img src="images/member-4.png" />
             <p>Jack</p>
           </div>
+          <div class="story story2">
+            <img src="images/member-1.png" />
+            <p>Raw</p>
+          </div>
+          <div class="story story3">
+            <img src="images/member-2.png" />
+            <p>Willam</p>
+          </div>
+          <div class="story story4">
+            <img src="images/member-3.png" />
+            <p>Kane</p>
+          </div>
+          <div class="story story5">
+            <img src="images/member-4.png" />
+            <p>Jack</p>
+          </div>
         </div>
+
+        <div class="category-bar">
+          <div class="category active">Trending</div>
+          <div class="category">Websites</div>
+          <div class="category">AI</div>
+          <div class="category">Fun</div>
+          <div class="category">Data Science</div>
+          <div class="category">Data Science</div>
+          <div class="category">Data Science</div>
+          <div class="category">Data Science</div>
+        </div>
+
+        <div class="posts">
+          <div class="post-container">
+            <div class="top-row">
+              <div class="user-profile">
+                <img src="images/profile-pic.png" />
+                <h3>Raunak Tiwari</h3>
+              </div>
+              <div class="category">Websites</div>
+            </div>
+            <img src="images/feed-image-1.png" alt="post" />
+            <div class="down-row">
+              <h4 class="title">
+                Namaste! This is the title of the first post!
+              </h4>
+              <div class="likes">
+                <span class="material-symbols-outlined"> favorite </span>38
+              </div>
+            </div>
+          </div>
+          <div class="post-container">
+            <div class="top-row">
+              <div class="user-profile">
+                <img src="images/member-3.png" />
+                <h3>Sachin</h3>
+              </div>
+              <div class="category">Data Science</div>
+            </div>
+            <img src="images/feed-image-2.png" alt="post" />
+            <div class="down-row">
+              <h4 class="title">
+                Namaste! This is the title of the first post on Data Science!
+              </h4>
+              <div class="likes">
+                <span class="material-symbols-outlined"> favorite </span>53
+              </div>
+            </div>
+          </div>
+          <div class="post-container">
+            <div class="top-row">
+              <div class="user-profile">
+                <img src="images/member-8.png" />
+                <h3>Derick</h3>
+              </div>
+              <div class="category">AI</div>
+            </div>
+            <img src="images/feed-image-5.png" alt="post" />
+            <div class="down-row">
+              <h4 class="title">This is the title</h4>
+              <div class="likes">
+                <span class="material-symbols-outlined"> favorite </span>42
+              </div>
+            </div>
+          </div>
+          <div class="post-container">
+            <div class="top-row">
+              <div class="user-profile">
+                <img src="images/profile-pic.png" />
+                <h3>Raunak Tiwari</h3>
+              </div>
+              <div class="category">Websites</div>
+            </div>
+            <img src="images/feed-image-1.png" alt="post" />
+            <div class="down-row">
+              <h4 class="title">
+                Namaste! This is the title of the first post!
+              </h4>
+              <div class="likes">
+                <span class="material-symbols-outlined"> favorite </span>38
+              </div>
+            </div>
+          </div>
+          <div class="post-container">
+            <div class="top-row">
+              <div class="user-profile">
+                <img src="images/member-3.png" />
+                <h3>Sachin</h3>
+              </div>
+              <div class="category">Data Science</div>
+            </div>
+            <img src="images/feed-image-2.png" alt="post" />
+            <div class="down-row">
+              <h4 class="title">
+                Namaste! This is the title of the first post on Data Science!
+              </h4>
+              <div class="likes">
+                <span class="material-symbols-outlined"> favorite </span>53
+              </div>
+            </div>
+          </div>
+          <div class="post-container">
+            <div class="top-row">
+              <div class="user-profile">
+                <img src="images/member-8.png" />
+                <h3>Derick</h3>
+              </div>
+              <div class="category">AI</div>
+            </div>
+            <img src="images/feed-image-5.png" alt="post" />
+            <div class="down-row">
+              <h4 class="title">This is the title</h4>
+              <div class="likes">
+                <span class="material-symbols-outlined"> favorite </span>42
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <h2>Create Post</h2>
         <div class="write-post-container">
           <div class="user-profile">
             <img src="images/profile-pic.png" />
-            <div>
-              <p>Richard</p>
-              <small>
-                public <i class="fa-sharp fa-solid fa-caret-down"></i>
-              </small>
-            </div>
+            <h4>7he_sachin</h4>
           </div>
           <div class="post-input-container">
-            <textarea rows="3" placeholder="What's on your Mind ?"></textarea>
+            <select name="" id="">
+              <option value="">Job</option>
+              <option value="">Personal</option>
+              <option value="">Random</option>
+            </select>
+            <textarea
+              rows="3"
+              placeholder="Provide us description of the post."
+            ></textarea>
+
             <div class="add-post-links">
-              <a href="#"><img src="images/live-video.png" />Live</a>
               <a href="#"><img src="images/photo.png" />Photo/Video</a>
-              <a href="#"><img src="images/feeling.png" />Activity</a>
             </div>
           </div>
         </div>
-        <div class="post-container">
-          <div class="user-profile">
-            <img src="images/profile-pic.png" />
-            <div>
-              <p>Richard</p>
-            </div>
-          </div>
+        <h2>Advertisements</h2>
+        <div class="ad-box">
+          <img src="images/advertisement.png" alt="" />
         </div>
       </div>
+    </main>
 
-      <!-- Right Sidebar -->
-      <div class="right-siderbar">
-        <div class="sidebar-title">
-          <h4>Events</h4>
-          <a href="#">See All</a>
-        </div>
-        <div class="event">
-          <div class="left-event">
-            <h3>06</h3>
-            <span>July</span>
-          </div>
-          <div class="right-event">
-            <h4>Welcome to Devohub</h4>
-            <p><i class="fa-solid fa-location-dot"></i>connecting others</p>
-            <a href="#">More info</a>
-          </div>
-        </div>
-        <div class="event">
-          <div class="left-event">
-            <h3>08</h3>
-            <span>Sep</span>
-          </div>
-          <div class="right-event">
-            <h4>Mobile Marketing</h4>
-            <p><i class="fa-solid fa-location-dot"></i>Heheuhehjj</p>
-            <a href="#">More info</a>
-          </div>
-        </div>
-
-        <div class="sidebar-title">
-          <h4>Advertisement</h4>
-          <a href="#">Close</a>
-        </div>
-        <img src="images/advertisement.png" class="siderbar-ads" />
-
-        <div class="sidebar-title">
-          <h4>Conversation</h4>
-          <a href="#">Close</a>
-        </div>
-
-        <div class="online-list">
-          <div class="online">
-            <img src="images/member-1.png" />
-            <div>
-              <p>Randon name</p>
-            </div>
-          </div>
-
-          <div class="online-list">
-            <div class="online">
-              <img src="images/member-2.png" />
-            </div>
-            <p>Randon name</p>
-          </div>
-
-          <div class="online-list">
-            <div class="online">
-              <img src="images/member-3.png" />
-            </div>
-            <p>Randon name</p>
-          </div>
-        </div>
-      </div>
-    </div>
     <script src="../js/theme.js"></script>
     <script src="../js/firebase-config.js"></script>
     <script src="../js/home.js"></script>

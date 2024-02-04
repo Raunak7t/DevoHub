@@ -5,8 +5,7 @@
   --bg-img: url(../assets/bg-0.jpg);
 }
 .light {
-  --primary-txt-clr: #0b0d41;
-  --secondary-txt-clr: #222;
+  --primary-txt-clr: #0a0b2e;
   --primary-bg: #fff;
   --secondary-bg: #bbb;
   --tertiary-bg: #ddd;
@@ -31,6 +30,15 @@ body {
   background-repeat: no-repeat;
   background-position: bottom;
 }
+
+.main-container {
+  width: 94%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+/* nav */
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -50,6 +58,28 @@ nav .backdrop {
   filter: blur(20px);
   z-index: 0;
 }
+
+/* logo */
+
+.logo .text {
+  background: linear-gradient(
+    to top left,
+    var(--accent-clr),
+    var(--accent-clr-2)
+  );
+  font-weight: 800;
+  font-size: 1.6rem;
+  font-family: "Kalam", cursive;
+  letter-spacing: 2px;
+  color: transparent;
+  background-clip: text;
+  -webkit-text-stroke: 0.5px var(--primary-txt-clr);
+}
+.light .logo .text {
+  text-shadow: 0 0 2px #00000030;
+}
+
+/* theme-toggler */
 
 .theme-toggle-wrapper {
   padding: 3px;
@@ -98,11 +128,15 @@ nav .backdrop {
   transform: translateX(-100%);
 }
 
+/* hero section */
+
 .hero {
   display: flex;
   align-items: center;
   height: 80vh;
 }
+
+/* hero left */
 
 .hero > .left {
   padding-left: 7vw;
@@ -124,12 +158,12 @@ nav .backdrop {
   );
   background-size: 0%;
   background-repeat: no-repeat;
-  animation: reveal-text 0.7s 0.7s linear 1 forwards;
+  animation: reveal-text 0.7s 1.1s linear 1 forwards;
 }
 .hero > .left .reveal h3 span {
   font-size: 3.5vw;
   font-family: "Kalam", cursive;
-  animation-delay: 1.4s;
+  animation-delay: 1.7s;
   animation-direction: alternate;
   animation-iteration-count: 4;
   margin-left: 8vw;
@@ -151,6 +185,8 @@ nav .backdrop {
   }
 }
 
+/* hero right */
+
 .hero > .right {
   height: 100%;
   width: 40%;
@@ -159,6 +195,9 @@ nav .backdrop {
   align-items: center;
   position: relative;
 }
+
+/* buttons */
+
 .hero > .right .btns {
   font-size: 2.4vw;
   width: fit-content;
@@ -184,7 +223,6 @@ nav .backdrop {
   opacity: 1;
   pointer-events: all;
 }
-
 .btns:hover .btn-wrapper {
   rotate: -10deg;
 }
@@ -264,6 +302,8 @@ nav .backdrop {
   margin-left: 20%;
   width: 30%;
 }
+
+/* forms */
 
 .right .forms {
   z-index: 10;
@@ -367,7 +407,6 @@ nav .backdrop {
   box-shadow: 0px 4px 20px rgba(62, 9, 9, 0.32);
 }
 .opt {
-  /* background: grey; */
   width: 50%;
   position: absolute;
   bottom: 0;
@@ -376,6 +415,8 @@ nav .backdrop {
 .signup-form .opt {
   right: 0;
 }
+
+/* image slides */
 
 .form-active .slider {
   filter: blur(30px);
@@ -437,6 +478,8 @@ nav .backdrop {
 .light .slider-light {
   display: flex;
 }
+
+/* cursor */
 
 #cursor {
   height: 20px;

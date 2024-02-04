@@ -1,0 +1,239 @@
+/* nav */
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 4vw;
+  height: 9vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--secondary-bg);
+}
+
+.header-nav .nav-left .menu {
+  display: none;
+}
+
+/* search bar */
+
+.search-bar {
+  background: var(--primary-bg);
+  padding: 5px 10px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#search-box {
+  border: none;
+  background: transparent;
+  color: var(--primary-txt-clr);
+  width: 200px;
+  outline: none;
+}
+
+/* theme-toggler */
+
+.theme-toggle-wrapper {
+  padding: 3px;
+  background-color: var(--primary-txt-clr);
+  width: 50px;
+  height: 28px;
+  border-radius: 20vw;
+}
+.theme-toggle {
+  border-radius: 2vw;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.theme-toggle .icon {
+  color: var(--primary-bg);
+  font-size: 17px;
+  font-weight: 500;
+  z-index: 10;
+}
+.theme-toggle .moon {
+  color: var(--primary-txt-clr);
+}
+.light .theme-toggle .moon {
+  color: var(--primary-bg);
+}
+.light .theme-toggle .sun {
+  color: var(--primary-txt-clr);
+}
+.theme-toggle .circle {
+  z-index: 0;
+  background-color: var(--tertiary-bg);
+  height: 22px;
+  width: 22px;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all ease 0.2s;
+}
+.light .theme-toggle .circle {
+  left: 100%;
+  transform: translateX(-100%);
+}
+
+.header-nav .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-user-icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  background: #000;
+  border-radius: 5rem;
+  overflow: hidden;
+  border: 1px solid var(--primary-txt-clr);
+}
+.nav-user-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* setting menu */
+
+.setting-menu {
+  z-index: 100;
+  position: fixed;
+  width: 350px;
+  height: 420px;
+  background: var(--primary-bg);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  overflow: hidden;
+  top: 10vh;
+  right: 4vw;
+  max-height: 0;
+  transition: max-height 0.3s;
+}
+
+.settings-menu-height {
+  max-height: 450px;
+}
+.setting-menu .user-profile {
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--secondary-txt-clr);
+}
+
+.user-profile a {
+  font-size: 12px;
+  color: var(--accent-clr-2);
+  text-decoration: none;
+}
+
+.setting-menu-inner {
+  padding: 20px;
+}
+
+.setting-links {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.setting-links .settings-icon {
+  width: 38px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.setting-links a {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: space-between;
+  text-decoration: none;
+  color: var(--secondary-txt-clr);
+}
+
+/* logo */
+
+.logo .text {
+  background: linear-gradient(
+    to top left,
+    var(--accent-clr),
+    var(--accent-clr-2)
+  );
+  font-weight: 800;
+  font-size: 1.6rem;
+  font-family: "Kalam", cursive;
+  letter-spacing: 2px;
+  color: transparent;
+  background-clip: text;
+  -webkit-text-stroke: 0.5px var(--primary-txt-clr);
+}
+.light .logo .text {
+  text-shadow: 0 0 2px #00000030;
+}
+
+/* aside */
+
+aside {
+  position: fixed;
+  /* background: var(--secondary-bg); */
+  padding-left: 3vw;
+  width: 18%;
+  height: 91vh;
+  margin-top: 9vh;
+}
+span.close-menu {
+  display: none;
+}
+
+.nav-links {
+  margin-top: 1rem;
+  height: 80%;
+  position: relative;
+}
+.nav-link {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  padding-left: 1.4rem;
+  height: 2.6rem;
+  transition: all ease 0.2s;
+}
+.nav-link:last-child {
+  margin-top: 4rem;
+}
+.nav-link:hover {
+  padding-left: 2.1rem;
+  scale: 1.1;
+}
+.nav-link.active {
+  /* background-color: var(--primary-bg); */
+  background-color: var(--secondary-bg);
+  border-left: 7px solid var(--accent-clr);
+  color: var(--primary-text-color);
+}
+.nav-link.active:hover {
+  padding-left: 1.4rem;
+  scale: 1;
+}
+
+/* main */
+
+main {
+  width: 82%;
+  height: 92vh;
+  position: fixed;
+  right: 0;
+  margin-top: 9vh;
+  padding-inline: 2vw;
+  padding-top: 2vh;
+  overflow-y: hidden;
+}

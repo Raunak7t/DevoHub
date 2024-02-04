@@ -2,19 +2,19 @@
 
 :root {
   --primary-txt-clr: #ffffff;
-  --secondary-txt-clr: #ccc;
-  --primary-bg: #2c2c3e;
-  --secondary-bg: #22213d;
-  --tertiary-bg: #020214;
+  --secondary-txt-clr: #ccccccf0;
+  --primary-bg: #343448;
+  --secondary-bg: #1b1b2c;
+  --tertiary-bg: #010112;
   --accent-clr: #8ad5fd;
   --accent-clr-2: #ee89fe;
 }
 .light {
-  --primary-txt-clr: #111;
-  --secondary-txt-clr: #222;
-  --primary-bg: #fff;
-  --secondary-bg: #ddd;
-  --tertiary-bg: #bbb;
+  --primary-txt-clr: #05061f;
+  --secondary-txt-clr: #1d1d25f0;
+  --primary-bg: #eaf2ff;
+  --secondary-bg: #cad5e3;
+  --tertiary-bg: #adbbcf;
   --accent-clr: #dd3ddf;
   --accent-clr-2: #304a91;
 }
@@ -34,26 +34,7 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.main-container {
-  width: 94%;
-  margin: 0 auto;
-  overflow-x: hidden;
-}
-
-.logo .text {
-  background: linear-gradient(
-    to top left,
-    var(--accent-clr),
-    var(--accent-clr-2)
-  );
-  font-weight: 800;
-  font-size: 1.6rem;
-  font-family: "Kalam", cursive;
-  letter-spacing: 2px;
-  color: transparent;
-  background-clip: text;
-  -webkit-text-stroke: 0.5px var(--primary-txt-clr);
-}
-.light .logo .text {
-  text-shadow: 0 0 2px #00000030;
+a {
+  text-decoration: none;
+  color: var(--secondary-txt-clr);
 }
