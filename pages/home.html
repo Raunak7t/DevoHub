@@ -49,7 +49,7 @@
           <img src="images/profile-pic.png" />
           <div>
             <p>7he_sachin</p>
-            <a href="#">See your profile</a>
+            <a href="profile.html">See your profile</a>
           </div>
         </div>
         <div class="user-profile">
@@ -88,38 +88,42 @@
       <span class="material-symbols-outlined close-menu"> close </span>
       <!-- <div class="logo"><span class="text">DevoHub</span></div> -->
       <nav class="nav-links">
-        <div class="nav-link">
-          <span class="material-symbols-outlined"> dashboard </span>
-          <h4>Feed</h4>
-        </div>
-        <div class="nav-link active">
+        <a href="home.html" class="nav-link active">
+          <span class="material-symbols-outlined"> home </span>
+          <h4>Home</h4>
+        </a>
+        <a class="nav-link">
           <span class="material-symbols-outlined"> groups_3 </span>
-          <h4>Users</h4>
-        </div>
-        <div class="nav-link">
-          <span class="material-symbols-outlined"> receipt_long </span>
-          <h4>Orders</h4>
-        </div>
-        <div class="nav-link">
-          <span class="material-symbols-outlined"> monitoring </span>
-          <h4>Analaytics</h4>
-        </div>
-        <div class="nav-link">
-          <span class="material-symbols-outlined"> mail </span>
-          <h4>Messages</h4>
-        </div>
-        <div class="nav-link">
+          <h4>People</h4>
+        </a>
+        <a class="nav-link">
+          <span class="material-symbols-outlined"> person_search </span>
+          <h4>Git-Hunter</h4>
+        </a>
+        <a class="nav-link">
+          <span class="material-symbols-outlined"> forum </span>
+          <h4>Forums</h4>
+        </a>
+        <a class="nav-link">
+          <span class="material-symbols-outlined">search</span>
+          <h4>Search</h4>
+        </a>
+        <a href="home.html" class="nav-link">
+          <span class="material-symbols-outlined">contact_support</span>
+          <h4>Help</h4>
+        </a>
+        <a class="nav-link">
           <span class="material-symbols-outlined"> settings </span>
           <h4>Settings</h4>
-        </div>
-        <div class="nav-link">
-          <span class="material-symbols-outlined"> add </span>
-          <h4>Add Product</h4>
-        </div>
-        <div class="nav-link">
+        </a>
+        <a href="home.html" class="nav-link">
+          <span class="material-symbols-outlined"> account_circle </span>
+          <h4>You</h4>
+        </a>
+        <a class="nav-link">
           <span class="material-symbols-outlined"> logout </span>
           <h4>Log-out</h4>
-        </div>
+        </a>
       </nav>
     </aside>
 
@@ -291,10 +295,12 @@
             <h4>7he_sachin</h4>
           </div>
           <div class="post-input-container">
+            <input type="text" id="post-title" placeholder="Title of post" />
             <select name="" id="">
-              <option value="">Job</option>
-              <option value="">Personal</option>
-              <option value="">Random</option>
+              <option value="other">Other</option>
+              <option value="job">Job</option>
+              <option value="personal">Personal</option>
+              <option value="cars">Cars</option>
             </select>
             <textarea
               rows="3"
@@ -313,8 +319,9 @@
       </div>
     </main>
 
-    <script src="../js/theme.js"></script>
     <script src="../js/firebase-config.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/nav.js"></script>
     <script src="../js/home.js"></script>
   </body>
 </html>

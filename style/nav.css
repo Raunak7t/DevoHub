@@ -45,6 +45,7 @@
   border-radius: 20vw;
 }
 .theme-toggle {
+  cursor: pointer;
   border-radius: 2vw;
   height: 100%;
   width: 100%;
@@ -127,6 +128,16 @@
 .setting-menu .user-profile {
   padding-block: 1rem;
   border-bottom: 1px solid var(--secondary-txt-clr);
+}
+.user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.user-profile img {
+  width: 45px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
 .user-profile a {
