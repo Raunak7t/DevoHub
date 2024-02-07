@@ -6,9 +6,7 @@ main {
 /* stories */
 .left {
   width: 67%;
-  height: 100%;
   overflow-x: hidden;
-  overflow-y: scroll;
   position: relative;
 }
 .left::-webkit-scrollbar {
