@@ -139,7 +139,11 @@
     </aside>
 
     <main>
-      <div class="profile-container editable">
+      <div class="profile-container">
+        <div class="edit-save">
+          <h2 class="btn save-btn">SAVE</h2>
+          <h3 class="btn edit-btn">EDIT</h3>
+        </div>
         <div class="profile">
           <div class="profile_container">
             <div class="profile-img">
@@ -169,10 +173,8 @@
               <textarea
                 class="desc input-field"
                 id="user-bio"
-                placeholder="bio"
-              >
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ipsum illum officiis non, tenetur reprehenderit voluptates possimus ea ipsa! Magnam!</textarea
-              >
+                placeholder="Summarize yourself - Bio"
+              ></textarea>
             </div>
           </div>
         </div>
@@ -306,7 +308,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ipsum illum of
                 type="text"
                 id="exp-desc"
                 class="input-field desc"
-                placeholder="More details of kind of work you did"
+                placeholder="More details about what kind of work you did/do"
               ></textarea>
             </div>
           </div>
@@ -345,8 +347,18 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ipsum illum of
         <div class="group-3">
           <h3 class="title">Contact</h3>
           <div class="items">
-            <p class="email">raunak7t@gmail.com</p>
-            <p class="phone">+91 9023902339</p>
+            <input
+              type="text"
+              id="email"
+              class="input-field"
+              placeholder="E-mail"
+            />
+            <input
+              type="text"
+              id="mobile"
+              class="input-field"
+              placeholder="Contact number"
+            />
           </div>
         </div>
       </div>
@@ -359,5 +371,6 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ipsum illum of
     <script src="../js/firebase-config.js"></script>
     <script src="../js/theme.js"></script>
     <script src="../js/nav.js"></script>
+    <script src="../js/profile.js"></script>
   </body>
 </html>

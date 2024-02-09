@@ -30,6 +30,36 @@ main {
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   padding: 5rem;
+  position: relative;
+}
+
+.edit-save {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.edit-save .btn {
+  background: var(--tertiary-bg);
+  padding: 5px 15px;
+  border: 1px solid var(--primary-txt-clr);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.save-btn {
+  display: none;
+}
+.editable .save-btn {
+  display: inline-block;
+  padding-inline: 20px;
+  background: linear-gradient(
+    to top left,
+    var(--accent-clr),
+    var(--accent-clr-2)
+  );
+  color: var(--secondary-bg);
+}
+.editable .edit-btn {
+  display: none;
 }
 
 .profile {
@@ -56,7 +86,7 @@ main {
   margin-top: 1rem;
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 .profile-container .title {
   color: var(--accent-clr-2);
@@ -99,18 +129,6 @@ main {
   height: initial;
   margin-bottom: 5px;
 }
-/* .item_preTitle {
-  color: var(--secondary-txt-clr);
-  font-weight: 300;
-}
-.item_title {
-  color: var(--primary-txt-clr);
-  margin: 8px 0;
-}
-.item_subtitle {
-  color: var(--text-color);
-  color: var(--secondary-txt-clr);
-} */
 
 /* profile */
 
@@ -167,4 +185,9 @@ main {
 }
 ul.info {
   margin-left: 2rem;
+}
+
+.group-3 .input-field {
+  width: 40%;
+  text-align: right;
 }
