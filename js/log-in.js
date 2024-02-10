@@ -4,14 +4,16 @@ let loginForm = document.querySelector(".login-form");
 
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  firebase
-    .auth()
-    .signInWithEmailAndPassword(logEmail.value, logPassword.value)
-    .then((userCredential) => {
-      window.location.assign("/pages/home.html");
-    })
-    .catch((error) => {
-      console.log(error);
-      alert(error.message);
-    });
+  console.log("go");
+  window.location.assign(`${window.location.origin}/pages/home.html`);
+  // firebase
+  //   .auth()
+  //   .signInWithEmailAndPassword(logEmail.value, logPassword.value)
+  //   .then((userCredential) => {
+  //     window.location.assign("/pages/home.html");
+  //   })
+  //   .catch((error) => {
+  //     console.log(error);
+  //     alert(error.message);
+  //   });
 });
