@@ -150,12 +150,6 @@
   color: var(--accent-clr-2);
   text-decoration: none;
 }
-.p-links {
-  width: 100%;
-  display: inline-flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 .setting-menu-inner {
   padding: 20px;

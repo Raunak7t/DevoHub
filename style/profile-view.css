@@ -30,36 +30,28 @@ main {
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   padding: 5rem;
-  position: relative;
 }
 
-.edit-save {
-  position: absolute;
-  top: 0;
-  right: 0;
+.description {
+  margin-top: 0.7rem;
+  font-weight: 400;
+  color: var(--secondary-txt-clr);
 }
-.edit-save .btn {
-  background: var(--tertiary-bg);
-  padding: 5px 15px;
-  border: 1px solid var(--primary-txt-clr);
-  border-radius: 10px;
-  cursor: pointer;
+.title {
+  color: var(--accent-clr-2);
+  text-transform: uppercase;
 }
-.save-btn {
-  display: none;
+.item_preTitle {
+  color: var(--secondary-txt-clr);
+  font-weight: 300;
 }
-.editable .save-btn {
-  display: inline-block;
-  padding-inline: 20px;
-  background: linear-gradient(
-    to top left,
-    var(--accent-clr),
-    var(--accent-clr-2)
-  );
-  color: var(--secondary-bg);
+.item_title {
+  color: var(--primary-txt-clr);
+  margin: 8px 0;
 }
-.editable .edit-btn {
-  display: none;
+.item_subtitle {
+  color: var(--text-color);
+  color: var(--secondary-txt-clr);
 }
 
 .profile {
@@ -86,48 +78,7 @@ main {
   margin-top: 1rem;
   display: flex;
   width: 100%;
-  justify-content: flex-start;
-}
-.profile-container .title {
-  color: var(--accent-clr-2);
-  font-size: 1.2rem;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-
-.profile-container .input-field {
-  background: transparent;
-  border: none;
-  display: block;
-  font-size: 1.1rem;
-  color: var(--primary-txt-clr);
-  width: 100%;
-}
-.editable .input-field {
-  background: var(--primary-bg);
-  border: 1px solid var(--secondary-txt-clr);
-  border-radius: 7px;
-  margin: 5px !important;
-  padding: 3px;
-}
-
-.profile-container .desc {
-  /* margin-top: 0.5rem; */
-  font-weight: 400;
-  color: var(--secondary-txt-clr);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 1rem;
-  resize: none;
-  height: 4rem;
-  width: 100%;
-}
-.desc::-webkit-scrollbar {
-  display: none;
-}
-.profile-container .sub-desc {
-  height: initial;
-  margin-bottom: 5px;
+  justify-content: space-around;
 }
 
 /* profile */
@@ -151,25 +102,22 @@ main {
   object-fit: cover;
   object-position: center;
 }
-.profile-container .profile_name_lastName {
+.profile_name_lastName {
   color: var(--primary-txt-clr);
   font-weight: 400;
   font-size: 2rem;
   text-transform: uppercase;
   display: block;
-  margin-bottom: -0.7rem;
+  margin-bottom: -0.8rem;
 }
-.profile-container .profile_name_firstName {
+.profile_name_firstName {
   color: var(--accent-clr-2);
   font-weight: 700;
   font-size: 3.4rem;
   text-transform: uppercase;
   display: block;
 }
-.profile-container .profile-title {
-  color: var(--primary-txt-clr);
-  font-size: 1.2rem;
-  font-weight: 600;
+.profile_title {
   text-transform: uppercase;
   margin-left: 5rem;
 }
@@ -185,9 +133,4 @@ main {
 }
 ul.info {
   margin-left: 2rem;
-}
-
-.group-3 .input-field {
-  width: 40%;
-  text-align: right;
 }
