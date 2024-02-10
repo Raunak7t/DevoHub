@@ -5,7 +5,7 @@ let loginForm = document.querySelector(".login-form");
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
   console.log("go");
-  window.location.href = `${window.location.origin}/pages/home.html`;
+  window.location.href = `${window.location.href}/pages/home.html`;
   // firebase
   //   .auth()
   //   .signInWithEmailAndPassword(logEmail.value, logPassword.value)
