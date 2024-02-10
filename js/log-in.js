@@ -8,7 +8,7 @@ loginForm.addEventListener("submit", (e) => {
     .auth()
     .signInWithEmailAndPassword(logEmail.value, logPassword.value)
     .then((userCredential) => {
-      window.location.assign("../pages/home.html");
+      window.location.assign("/pages/home.html");
     })
     .catch((error) => {
       console.log(error);
