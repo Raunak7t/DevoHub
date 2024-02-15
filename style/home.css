@@ -197,36 +197,15 @@ main {
   padding-left: 35px;
 }
 
-.post-input-container textarea {
-  width: 100%;
-  background: transparent;
-  padding: 5px;
-  outline: none;
-  border: 0;
-  outline: 0;
-  border-bottom: 1px solid var(--secondary-txt-clr);
-  background-color: transparent;
-  color: var(--primary-txt-clr);
-  resize: none;
-}
-
-.add-post-links {
-  display: flex;
-  margin-top: 10px;
-}
-
-.add-post-links a {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  color: #626262;
-  margin-right: 30px;
-  font-size: 13px;
-}
-
-.add-post-links a img {
-  width: 20px;
-  margin-right: 10px;
+.post-input-container .input-field {
+  display: block;
+  width: 80%;
+  background-color: var(--primary-bg);
+  margin: 10px;
+  padding: 5px 10px;
+  border: 1px solid var(--primary-txt-clr);
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .ad-box {

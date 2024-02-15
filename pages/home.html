@@ -302,24 +302,47 @@
             <img src="images/member-3.png" />
             <h4>7he_sachin</h4>
           </div>
+
           <div class="post-input-container">
-            <input type="text" id="post-title" placeholder="Title of post" />
-            <select name="" id="">
-              <option value="other">Other</option>
-              <option value="job">Job</option>
-              <option value="personal">Personal</option>
-              <option value="cars">Cars</option>
-            </select>
+            <input
+              type="text"
+              class="input-field"
+              id="post-title"
+              placeholder="Title of post"
+            />
+            <label for="post-image" class="input-field">
+              <!-- <img src="https://placehold.co/200x100" alt="Upload Image"> -->
+              <h3>Upload image</h3>
+            </label>
+            <input
+              type="file"
+              id="post-image"
+              style="visibility: hidden"
+              onchange=""
+            />
+            <input
+              list="categories"
+              class="input-field"
+              id="post-category"
+              placeholder="Post category"
+            />
+            <datalist id="categories">
+              <option value="Websites"></option>
+              <option value="AI"></option>
+              <option value="Mobile Apps"></option>
+              <option value="Data Science"></option>
+              <option value="Other"></option>
+            </datalist>
+
             <textarea
+              class="input-field"
               rows="3"
               placeholder="Provide us description of the post."
             ></textarea>
-
-            <div class="add-post-links">
-              <a href="#"><img src="images/photo.png" />Photo/Video</a>
-            </div>
+            <input type="button" value="Upload" />
           </div>
         </div>
+
         <h2>Advertisements</h2>
         <div class="ad-box">
           <img src="images/advertisement.png" alt="" />
