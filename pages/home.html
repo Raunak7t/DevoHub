@@ -296,8 +296,8 @@
       </div>
 
       <div class="right">
-        <h2>Create Post</h2>
         <div class="write-post-container">
+          <h3>Add Post</h3>
           <div class="user-profile">
             <img src="images/member-3.png" />
             <h4>7he_sachin</h4>
@@ -310,11 +310,11 @@
               id="post-title"
               placeholder="Title of post"
             />
-            <label for="post-image" class="input-field">
-              <!-- <img src="https://placehold.co/200x100" alt="Upload Image"> -->
-              <h3>Upload image</h3>
+            <label for="post-image" class="input-field img-label">
+              <img src="../assets/upload-img.png" alt="Upload Image" />
             </label>
             <input
+              style="display: none"
               type="file"
               id="post-image"
               onchange=""
@@ -338,12 +338,16 @@
               rows="3"
               placeholder="Provide us description of the post."
             ></textarea>
-            <input type="button" value="Upload" />
+            <input
+              class="input-field upload-btn"
+              type="button"
+              value="Upload"
+            />
           </div>
         </div>
 
-        <h2>Advertisements</h2>
         <div class="ad-box">
+          <h2>Advertisements</h2>
           <img src="images/advertisement.png" alt="" />
         </div>
       </div>
