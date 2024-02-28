@@ -24,6 +24,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+*::-webkit-scrollbar {
+  width: 15px;
+  background-color: var(--primary-bg);
+  border-radius: 20px;
+}
+*::-webkit-scrollbar-thumb {
+  border: 3px solid var(--primary-bg);
+  border-radius: 20px;
+  background: linear-gradient(-65deg, var(--accent-clr), var(--accent-clr-2));
+}
 html,
 body {
   min-height: 100vh;

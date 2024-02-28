@@ -252,5 +252,5 @@ main {
   overflow-y: scroll;
 }
 main::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
 }

@@ -28,7 +28,7 @@ signupForm.addEventListener("submit", (e) => {
         .doc(data.user.uid)
         .set(userData)
         .then((res) => {
-          window.location.assign("/pages/home.html");
+          window.location.href = `${window.location.href}pages/home.html`;
         });
     })
     .catch((error) => {

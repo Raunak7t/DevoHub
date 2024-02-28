@@ -128,9 +128,6 @@ main {
   height: 4rem;
   width: 100%;
 }
-.desc::-webkit-scrollbar {
-  display: none;
-}
 .profile-container .sub-desc {
   height: initial;
   margin-bottom: 5px;
@@ -150,6 +147,7 @@ main {
   border-radius: 50%;
   border: 1px solid var(--accent-clr);
   overflow: hidden;
+  position: relative;
 }
 .profile-img img {
   width: 100%;
@@ -157,6 +155,25 @@ main {
   object-fit: cover;
   object-position: center;
 }
+.profile-img label span {
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+  padding: 15px;
+  background: var(--primary-bg);
+  opacity: 0.9;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: none;
+}
+.editable .profile-img label span {
+  display: block;
+}
+.profile-img #upload-profile-img {
+  display: none;
+}
+
 .profile-container .profile_name_lastName {
   color: var(--primary-txt-clr);
   font-weight: 400;
@@ -196,4 +213,31 @@ ul.info {
 .group-3 .input-field {
   width: 40%;
   text-align: right;
+}
+
+.portfolio-container {
+  height: 91%;
+  /* width: 76%; */
+  width: 0%;
+  background: linear-gradient(-65deg, var(--accent-clr), var(--accent-clr-2));
+  position: fixed;
+  border-radius: 1rem;
+  top: 50px;
+  right: 4vw;
+  overflow: hidden;
+  transition: all ease 0.5s;
+}
+.portfolio-container iframe {
+  width: 100%;
+  height: 100%;
+}
+.portfolio-container span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--primary-bg);
+  padding: 10px;
+  border-radius: 50%;
+  border-top-right-radius: 0;
+  cursor: pointer;
 }
