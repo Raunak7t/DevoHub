@@ -5,6 +5,7 @@ let signupForm = document.querySelector(".signup-form");
 
 signupForm.addEventListener("submit", (e) => {
   e.preventDefault();
+  let fullName = regName.value.split(" ");
 
   firebase
     .auth()
@@ -12,12 +13,13 @@ signupForm.addEventListener("submit", (e) => {
     .then((data) => {
       console.log(data.user.uid);
       let userData = {
-        name: regName.value,
         email: regEmail.value,
         password: regPassword.value,
-        "profile-img": "http://www.placehold.co/50",
-        "last-name": "LastName",
-        "first-name": "FirstName",
+        "profile-img":
+          "https://firebasestorage.googleapis.com/v0/b/devohub7.appspot.com/o/DHDP.png?alt=media&token=d14ac81d-9f24-4fd3-b445-75364e277053",
+        "last-name":
+          fullName.length > 1 ? fullName[fullName.length - 1] : "DevoHubber",
+        "first-name": fullName[0],
         "profile-title": "",
         "user-bio": ``,
         "skill-1": "",
