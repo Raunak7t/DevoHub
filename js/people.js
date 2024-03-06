@@ -7,6 +7,7 @@ firebase.auth().onAuthStateChanged((user) => {
       .firestore()
       .collection("users")
       .onSnapshot((users) => {
+        usersDiv.innerHTML = "";
         users.forEach((user) => {
           console.log(user.data());
           let card = document.createElement("div");

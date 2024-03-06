@@ -13,11 +13,6 @@
   box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.15);
   padding: 30px 15px;
   margin: 50px 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 .card-image {
@@ -49,11 +44,10 @@
 }
 
 .name {
-  margin-top: 50px;
+  margin-block: 50px 7px;
   font-size: 1.4em;
   color: var(--primary-txt-clr);
   font-weight: bold;
   letter-spacing: 0.8px;
   overflow: hidden;
-  /* text-wrap: nowrap; */
 }

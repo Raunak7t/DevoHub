@@ -162,7 +162,7 @@ main {
   width: 100%;
   padding: 15px;
   background: var(--primary-bg);
-  opacity: 0.9;
+  opacity: 0.8;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -218,7 +218,6 @@ ul.info {
 
 .portfolio-container {
   height: 91%;
-  /* width: 76%; */
   width: 0%;
   background: linear-gradient(-65deg, var(--accent-clr), var(--accent-clr-2));
   position: fixed;

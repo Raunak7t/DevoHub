@@ -15,7 +15,6 @@ let uid;
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     uid = urlUid ? urlUid : user.uid;
-    console.log(uid);
     firebase
       .firestore()
       .collection("users")
