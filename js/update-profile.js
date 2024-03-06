@@ -16,4 +16,5 @@ saveBtn.addEventListener("click", () => {
     newData[field.id] = field.value;
   });
   console.log(newData);
+  firebase.firestore().collection("users").doc(uid).update(newData);
 });
