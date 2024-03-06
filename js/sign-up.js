@@ -13,6 +13,7 @@ signupForm.addEventListener("submit", (e) => {
     .then((data) => {
       console.log(data.user.uid);
       let userData = {
+        uid: data.user.uid,
         email: regEmail.value,
         password: regPassword.value,
         "profile-img":
