@@ -1,11 +1,5 @@
-// firebase
-
-// firebase.auth().onAuthStateChanged((user) => {
-//   if (user) {
-//   } else {
-//     window.location.assign("../index.html");
-//   }
-// });
+const storiesDiv = document.querySelector(".story-gallery");
+const categoryBar = document.querySelector(".category-bar");
 
 storiesDiv.addEventListener("wheel", (evt) => {
   evt.preventDefault();
