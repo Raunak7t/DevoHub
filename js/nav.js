@@ -8,6 +8,14 @@ const headerNavDP = document.querySelector("#header-nav-dp");
 const settingMenuDP = document.querySelector("#setting-menu-dp");
 const settingMenuUsername = document.querySelector("#setting-menu-username");
 
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    updateNav(user.uid);
+  } else {
+    // window.location.assign("../index.html");
+  }
+});
+
 function updateNav(uid) {
   firebase
     .firestore()

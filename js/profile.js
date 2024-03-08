@@ -10,11 +10,10 @@ inputFields.forEach((field) => {
 
 const urlParams = new URLSearchParams(window.location.search);
 let urlUid = urlParams.get("uid");
-let uid;
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    uid = urlUid ? urlUid : user.uid;
+    let uid = urlUid ? urlUid : user.uid;
     firebase
       .firestore()
       .collection("users")
@@ -43,4 +42,3 @@ function populateForm(fieldKeyMap) {
     }
   }
 }
-// populateForm();

@@ -201,6 +201,7 @@ main {
 }
 
 .post-input-container .input-field {
+  color: var(--primary-txt-clr);
   display: block;
   width: 100%;
   background-color: var(--primary-bg);
@@ -217,6 +218,7 @@ main {
 .post-input-container .img-label {
   padding: 0;
   height: 100px;
+  cursor: pointer;
 }
 .img-label img {
   width: 100%;
@@ -228,6 +230,7 @@ main {
   filter: invert(80%);
 }
 .post-input-container .upload-btn {
+  cursor: pointer;
   background: linear-gradient(45deg, var(--accent-clr), var(--accent-clr-2));
   color: var(--secondary-bg);
   font-weight: 700;
@@ -235,6 +238,7 @@ main {
 }
 
 .ad-box {
+  cursor: pointer;
   margin-top: 10px;
 }
 .ad-box img {

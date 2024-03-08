@@ -9,3 +9,27 @@ categoryBar.addEventListener("wheel", (evt) => {
   evt.preventDefault();
   categoryBar.scrollLeft += evt.deltaY;
 });
+
+let uid;
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    uid = user.uid;
+    firebase
+      .firestore()
+      .collection("users")
+      .doc(uid)
+      .onSnapshot((data) => {
+        updateCPS(data.data());
+      });
+  } else {
+    // window.location.assign("../index.html");
+  }
+});
+
+function updateCPS(data) {
+  document.getElementById("cps-dp").src = data["profile-img"];
+  document.getElementById(
+    "cps-username"
+  ).innerText = `${data["first-name"]} ${data["last-name"]}`;
+}
