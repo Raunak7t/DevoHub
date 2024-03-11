@@ -16,6 +16,7 @@
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-storage.js"></script>
   </head>
   <body>
     <div class="header-nav">
@@ -320,13 +321,17 @@
               placeholder="Title of post"
             />
             <label for="post-image" class="input-field img-label">
-              <img src="../assets/upload-img.png" alt="Upload Image" />
+              <img
+                id="post-img-preview"
+                src="../assets/upload-img.png"
+                alt="Upload Image"
+              />
             </label>
             <input
               style="display: none"
               type="file"
               id="post-image"
-              onchange=""
+              onchange="getImg(event)"
             />
             <input
               list="categories"
@@ -342,8 +347,8 @@
               <option value="Data Science"></option>
               <option value="Other"></option>
             </datalist>
-
             <textarea
+              id="post-desc"
               class="input-field"
               rows="3"
               placeholder="Provide us description of the post."
@@ -352,6 +357,7 @@
               class="input-field upload-btn"
               type="button"
               value="Upload"
+              onclick="createPost()"
             />
           </div>
         </div>
@@ -367,5 +373,6 @@
     <script src="../js/theme.js"></script>
     <script src="../js/nav.js"></script>
     <script src="../js/home.js"></script>
+    <script src="../js/create-post.js"></script>
   </body>
 </html>

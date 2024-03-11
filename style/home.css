@@ -163,7 +163,7 @@ main {
 }
 .post-container .down-row {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
   gap: 1.5rem;
   padding: 8px;

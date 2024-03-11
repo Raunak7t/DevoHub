@@ -11,6 +11,7 @@ categoryBar.addEventListener("wheel", (evt) => {
 });
 
 let uid;
+let imgFile;
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
@@ -32,4 +33,15 @@ function updateCPS(data) {
   document.getElementById(
     "cps-username"
   ).innerText = `${data["first-name"]} ${data["last-name"]}`;
+}
+
+function getImg(e) {
+  imgFile = e.target.files[0];
+  if (imgFile) {
+    const reader = new FileReader();
+    reader.readAsDataURL(imgFile);
+    reader.onload = function (e) {
+      document.querySelector("#post-img-preview").src = e.target.result;
+    };
+  }
 }
