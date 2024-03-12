@@ -10,8 +10,9 @@ categoryBar.addEventListener("wheel", (evt) => {
   categoryBar.scrollLeft += evt.deltaY;
 });
 
+const postsDiv = document.querySelector(".posts");
+
 let uid;
-let imgFile;
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
@@ -22,6 +23,7 @@ firebase.auth().onAuthStateChanged((user) => {
       .doc(uid)
       .onSnapshot((data) => {
         updateCPS(data.data());
+        showPosts();
       });
   } else {
     // window.location.assign("../index.html");
@@ -35,13 +37,51 @@ function updateCPS(data) {
   ).innerText = `${data["first-name"]} ${data["last-name"]}`;
 }
 
-function getImg(e) {
-  imgFile = e.target.files[0];
-  if (imgFile) {
-    const reader = new FileReader();
-    reader.readAsDataURL(imgFile);
-    reader.onload = function (e) {
-      document.querySelector("#post-img-preview").src = e.target.result;
-    };
+function showPosts() {
+  firebase
+    .firestore()
+    .collection("posts")
+    .onSnapshot((posts) => {
+      postsDiv.innerHTML = "";
+      posts.forEach((post) => {
+        getPostCreater(post.data());
+      });
+    });
+
+  function getPostCreater(postData) {
+    firebase
+      .firestore()
+      .collection("users")
+      .doc(postData.uid)
+      .onSnapshot((user) => {
+        addPostCard(user.data(), postData);
+      });
+  }
+
+  function addPostCard(userData, postData) {
+    console.log(userData);
+    console.log(postData);
+    let postCard = document.createElement("div");
+    postCard.classList.add("post-container");
+
+    postCard.innerHTML = `
+    <div class="top-row">
+      <div class="dp-name">
+        <img src="${userData["profile-img"]}" />
+        <h3>${userData["first-name"]} ${userData["last-name"]}</h3>
+      </div>
+      <div class="category">${postData["category"]}</div>
+    </div>
+    <img src="${postData["imgURL"]}" alt="post" />
+    <div class="down-row">
+      <h4 class="title">
+      ${postData["title"]}
+      </h4>
+      <div class="likes">
+        <span class="material-symbols-outlined"> favorite </span>${postData["likes"].length}
+      </div>
+    </div>
+    `;
+    postsDiv.appendChild(postCard);
   }
 }

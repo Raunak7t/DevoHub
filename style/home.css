@@ -147,19 +147,50 @@ main {
   background: var(--secondary-bg);
   border-radius: 8px;
   color: var(--primary-txt-clr);
+  overflow: hidden;
+  position: relative;
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+.post-container * {
+  transition: all ease 0.3s;
 }
 .post-container .top-row {
+  width: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap-reverse;
   padding: 8px;
+  padding-bottom: 20px;
+  position: absolute;
+  background: linear-gradient(var(--primary-bg) 10px, transparent);
+  z-index: 10;
 }
-.top-row .user-profile img {
+.top-row .dp-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  text-wrap: nowrap;
+  flex-shrink: 0;
+}
+.top-row .dp-name img {
+  border-radius: 50%;
   height: 30px;
   width: 30px;
 }
-.post-container img {
+.post-container .main-img {
+  margin-top: 10px;
   width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.main-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
 }
 .post-container .down-row {
   display: flex;
@@ -167,6 +198,12 @@ main {
   justify-content: space-between;
   gap: 1.5rem;
   padding: 8px;
+  padding-bottom: 12px;
+}
+.down-row .title {
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .down-row .likes {
   display: inline-flex;
@@ -175,6 +212,19 @@ main {
 }
 .down-row .likes img {
   width: 24px;
+}
+
+.post-container:hover {
+  background: var(--primary-bg);
+}
+.post-container:hover .category {
+  background: linear-gradient(45deg, var(--accent-clr), var(--accent-clr-2));
+  color: var(--secondary-bg);
+  font-weight: 700;
+}
+.post-container:hover .main-img img {
+  object-position: center;
+  scale: 1.2;
 }
 
 /* create post */

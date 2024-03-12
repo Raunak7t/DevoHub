@@ -1,3 +1,16 @@
+let imgFile;
+
+function getImg(e) {
+  imgFile = e.target.files[0];
+  if (imgFile) {
+    const reader = new FileReader();
+    reader.readAsDataURL(imgFile);
+    reader.onload = function (e) {
+      document.querySelector("#post-img-preview").src = e.target.result;
+    };
+  }
+}
+
 function createPost(e) {
   let title = document.querySelector("#post-title").value;
   let category = document.querySelector("#post-category").value;
@@ -37,9 +50,16 @@ function createPost(e) {
                 date: new Date().toLocaleDateString(),
               })
               .then((res) => {
-                firebase.firestore().collection("posts/").doc(res.id).update({
-                  id: res.id,
-                });
+                firebase
+                  .firestore()
+                  .collection("posts/")
+                  .doc(res.id)
+                  .update({
+                    id: res.id,
+                  })
+                  .then(() => {
+                    location.reload();
+                  });
               });
           }
         });

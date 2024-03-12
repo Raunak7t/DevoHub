@@ -9,7 +9,6 @@ firebase.auth().onAuthStateChanged((user) => {
       .onSnapshot((users) => {
         usersDiv.innerHTML = "";
         users.forEach((user) => {
-          console.log(user.data());
           let card = document.createElement("div");
           card.classList.add("card");
           card.innerHTML = `
