@@ -72,7 +72,9 @@ function showPosts() {
       </div>
       <div class="category">${postData["category"]}</div>
     </div>
-    <img src="${postData["imgURL"]}" alt="post" />
+    <div class="main-img">
+      <img src="${postData["imgURL"]}" alt="post" />
+    </div>
     <div class="down-row">
       <h4 class="title">
       ${postData["title"]}
