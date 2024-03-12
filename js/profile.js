@@ -10,10 +10,11 @@ inputFields.forEach((field) => {
 
 const urlParams = new URLSearchParams(window.location.search);
 let urlUid = urlParams.get("uid");
+let uid;
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    let uid = urlUid ? urlUid : user.uid;
+    uid = urlUid ? urlUid : user.uid;
     firebase
       .firestore()
       .collection("users")

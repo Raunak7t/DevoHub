@@ -58,7 +58,11 @@ function createPost(e) {
                     id: res.id,
                   })
                   .then(() => {
-                    location.reload();
+                    document.querySelector("#post-img-preview").src =
+                      "../assets/upload-img.png";
+                    document.querySelector("#post-title").value = "";
+                    document.querySelector("#post-category").value = "";
+                    document.querySelector("#post-desc").value = "";
                   });
               });
           }

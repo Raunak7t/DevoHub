@@ -164,7 +164,7 @@ main {
   padding: 8px;
   padding-bottom: 20px;
   position: absolute;
-  background: linear-gradient(var(--primary-bg) 10px, transparent);
+  background: linear-gradient(var(--secondary-bg) 10px, transparent);
   z-index: 10;
 }
 .top-row .dp-name {
