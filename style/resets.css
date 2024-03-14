@@ -12,9 +12,9 @@
 .light {
   --primary-txt-clr: #05061f;
   --secondary-txt-clr: #1d1d25f0;
-  --primary-bg: #eaf2ff;
-  --secondary-bg: #cad5e3;
-  --tertiary-bg: #adbbcf;
+  --primary-bg: #ffffff;
+  --secondary-bg: #ced5e2;
+  --tertiary-bg: #b5bfcf;
   --accent-clr: #dd3ddf;
   --accent-clr-2: #304a91;
 }

@@ -251,6 +251,3 @@ main {
   padding-block: 2vh 4vh;
   overflow-y: scroll;
 }
-main::-webkit-scrollbar {
-  /* display: none; */
-}
