@@ -7,9 +7,8 @@ main::-webkit-scrollbar {
   display: none;
 }
 .left {
-  width: 70%;
+  width: 69%;
   overflow-x: hidden;
-  height: calc(100vh - 70px);
 }
 .left::-webkit-scrollbar {
   display: none;
@@ -86,6 +85,74 @@ span.liked {
 }
 .post .bottom {
   margin: 10px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.post .bottom h4 {
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.post .bottom h5 {
+  border-bottom: 1px solid var(--accent-clr);
+  color: var(--accent-clr-2);
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.left .add-comment {
+  margin-block: 15px;
+  padding: 10px 20px;
+  background-color: var(--secondary-bg);
+  border-radius: 10px;
+}
+.left .comment-input {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-block: 10px 5px;
+}
+.comment-input input {
+  width: 100%;
+  height: 2rem;
+  font-size: 1.1rem;
+  border-radius: 7px;
+  border: none;
+  background: var(--primary-bg);
+  color: var(--primary-txt-clr);
+  padding-inline: 10px;
+}
+.comment-input .send-btn {
+  background: linear-gradient(45deg, var(--accent-clr), var(--accent-clr-2));
+  border-radius: 7px;
+  color: var(--secondary-bg);
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 30px;
+}
+
+.left > h2 {
+  margin-block: 10px;
+}
+
+.all-comments {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-card {
+  background-color: var(--secondary-bg);
+  padding: 10px;
+  margin: 10px;
+  width: 47%;
+  overflow: hidden;
+}
+.comment-card .comment-text {
+  margin: 10px;
 }
 
 .right {
@@ -93,10 +160,12 @@ span.liked {
   height: calc(100vh - 70px);
   position: fixed;
   right: 4vw;
-  padding-right: 5px;
+  padding-right: 12px;
   overflow-y: scroll;
 }
-
+.right > h3 {
+  margin-bottom: 10px;
+}
 .post-container {
   margin-bottom: 10px;
   background: var(--secondary-bg);
@@ -118,7 +187,7 @@ span.liked {
   background: linear-gradient(var(--secondary-bg) 10px, transparent);
   z-index: 10;
 }
-.top-row .dp-name {
+.dp-name {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -126,7 +195,7 @@ span.liked {
   text-wrap: nowrap;
   flex-shrink: 0;
 }
-.top-row .dp-name img {
+.dp-name img {
   border-radius: 50%;
   height: 30px;
   width: 30px;
@@ -134,7 +203,7 @@ span.liked {
 .post-container .main-img {
   margin-top: 10px;
   width: 100%;
-  height: 150px;
+  height: 130px;
   overflow: hidden;
 }
 .main-img img {
@@ -165,6 +234,7 @@ span.liked {
 .post-container:hover {
   background: var(--primary-bg);
 }
-.post-container:hover {
-  background: var(--primary-bg);
+.post-container:hover .main-img img {
+  object-position: center;
+  scale: 1.2;
 }

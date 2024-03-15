@@ -221,8 +221,9 @@ main {
   color: var(--secondary-bg);
   font-weight: 700;
 }
-.post-container:hover {
-  background: var(--primary-bg);
+.post-container:hover .main-img img {
+  object-position: center;
+  scale: 1.2;
 }
 
 /* create post */
