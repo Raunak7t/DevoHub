@@ -62,7 +62,7 @@ function showPosts() {
     let postCard = document.createElement("div");
     postCard.classList.add("post-container");
     postCard.addEventListener("click", () => {
-      expandPost(userData, postData);
+      expandPost(postData.id);
     });
     postCard.innerHTML = `
     <div class="top-row">
@@ -86,8 +86,7 @@ function showPosts() {
     `;
     postsDiv.appendChild(postCard);
   }
-  function expandPost(userData, postData) {
-    sessionStorage.setItem("postData", JSON.stringify({ userData, postData }));
-    window.location = "./view-post.html";
+  function expandPost(id) {
+    window.location = "./view-post.html?id=" + id;
   }
 }

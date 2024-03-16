@@ -48,6 +48,7 @@ main::-webkit-scrollbar {
   width: 95%;
 }
 .img-container img {
+  backdrop-filter: blur(5px);
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -77,11 +78,17 @@ main::-webkit-scrollbar {
   cursor: pointer;
   font-size: 1.5rem;
 }
-span.liked {
+.like.liked .n-span {
+  display: none;
+}
+.like.liked .l-span {
+  display: inline;
+}
+span.l-span {
   display: none;
   color: rgb(255, 36, 109);
   font-weight: 900;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
 }
 .post .bottom {
   margin: 10px;
@@ -103,32 +110,32 @@ span.liked {
 
 .left .add-comment {
   margin-block: 15px;
-  padding: 10px 20px;
-  background-color: var(--secondary-bg);
-  border-radius: 10px;
-}
-.left .comment-input {
+  padding: 7px;
+  background-color: var(--primary-bg);
+  border-radius: 30px;
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-block: 10px 5px;
 }
-.comment-input input {
+.add-comment input {
   width: 100%;
-  height: 2rem;
   font-size: 1.1rem;
   border-radius: 7px;
   border: none;
   background: var(--primary-bg);
   color: var(--primary-txt-clr);
   padding-inline: 10px;
+  outline: none;
 }
-.comment-input .send-btn {
+.add-comment input::placeholder {
+  color: var(--secondary-txt-clr);
+}
+.add-comment .send-btn {
   cursor: pointer;
   background: linear-gradient(45deg, var(--accent-clr), var(--accent-clr-2));
-  border-radius: 7px;
+  border-radius: 30px;
   color: var(--secondary-bg);
-  height: 2rem;
+  height: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
