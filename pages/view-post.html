@@ -151,7 +151,7 @@
           <div class="top-bar">
             <div class="user-profile">
               <img
-                id="setting-menu-dp"
+                id="post-user-dp"
                 src="https://firebasestorage.googleapis.com/v0/b/devohub7.appspot.com/o/DHDP.png?alt=media&token=d14ac81d-9f24-4fd3-b445-75364e277053"
               />
               <h4>User Name</h4>
@@ -243,17 +243,16 @@
             <div class="top-row">
               <div class="dp-name">
                 <img src="${userData["profile-img"]}" />
-                <h4>${userData["first-name"]} ${userData["last-name"]}</h4>
+                <h4>"first-name"</h4>
               </div>
             </div>
             <div class="main-img">
-              <img src="${postData["imgURL"]}" alt="post" />
+              <img src="images/feed-image-2.png" alt="post" />
             </div>
             <div class="down-row">
               <h4 class="title">${postData["title"]}</h4>
               <div class="likes">
-                <span class="material-symbols-outlined"> favorite </span
-                >${postData["likes"].length}
+                <span class="material-symbols-outlined"> favorite </span>69
               </div>
             </div>
           </div>
@@ -300,5 +299,6 @@
     <script src="../js/firebase-config.js"></script>
     <script src="../js/theme.js"></script>
     <script src="../js/nav.js"></script>
+    <script src="../js/view-post.js"></script>
   </body>
 </html>

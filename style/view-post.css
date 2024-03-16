@@ -124,6 +124,7 @@ span.liked {
   padding-inline: 10px;
 }
 .comment-input .send-btn {
+  cursor: pointer;
   background: linear-gradient(45deg, var(--accent-clr), var(--accent-clr-2));
   border-radius: 7px;
   color: var(--secondary-bg);
@@ -203,7 +204,7 @@ span.liked {
 .post-container .main-img {
   margin-top: 10px;
   width: 100%;
-  height: 130px;
+  height: 150px;
   overflow: hidden;
 }
 .main-img img {
@@ -218,7 +219,6 @@ span.liked {
   justify-content: space-between;
   gap: 1.5rem;
   padding: 8px;
-  padding-bottom: 12px;
 }
 .down-row .title {
   text-wrap: nowrap;
