@@ -13,6 +13,9 @@ const likeCount = document.querySelector(".like h4");
 const likeBtn = document.querySelector(".like");
 const commentCount = document.querySelector(".comment h4");
 const postTitle = document.querySelector(".bottom h4");
+const commentInput = document.querySelector("#comment-input");
+const sendCommentBtn = document.querySelector(".send-btn");
+const allComments = document.querySelector(".all-comments");
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
@@ -60,6 +63,7 @@ function fillPostData(postData, userData) {
       if (postData["likes"][likeIndex] === uid) {
         like = true;
         postData["likes"].splice(likeIndex, 1);
+        likeBtn.classList.remove("liked");
       }
     }
     if (!like) {
@@ -74,4 +78,61 @@ function fillPostData(postData, userData) {
   commentCount.innerText = postData["comments"].length;
 
   postTitle.innerText = postData["title"];
+
+  fillComments(postData["comments"]);
 }
+
+function fillComments(commentarry) {
+  if (commentarry.length !== 0) {
+    allComments.innerHTML = "";
+    for (
+      let commentindex = 0;
+      commentindex < commentarry.length;
+      commentindex++
+    ) {
+      //user data
+      firebase
+        .firestore()
+        .collection("users")
+        .doc(commentarry[commentindex].uid)
+        .get()
+        .then((user) => {
+          userData = user.data();
+          let commentCard = document.createElement("div");
+          commentCard.classList.add("comment-card");
+          commentCard.innerHTML = `
+            <div class="dp-name">
+              <img src="${userData["profile-img"]}" />
+              <h4>${userData["first-name"]} ${userData["last-name"]}</h4>
+            </div>
+            <div class="comment-text">
+              ${commentarry[commentindex]["commentText"]}
+            </div>
+          `;
+          allComments.appendChild(commentCard);
+        });
+    }
+  }
+}
+
+sendCommentBtn.addEventListener("click", () => {
+  if (commentInput.value == "") {
+    alert("Please write something...!");
+  } else {
+    let commentdata = {
+      commentText: commentInput.value,
+      uid: uid,
+    };
+    postData["comments"].push(commentdata);
+    firebase
+      .firestore()
+      .collection("posts")
+      .doc(postID)
+      .update({
+        comments: postData["comments"],
+      })
+      .then(() => {
+        commentInput.value = "";
+      });
+  }
+});

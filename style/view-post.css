@@ -18,6 +18,7 @@ main::-webkit-scrollbar {
   background-color: var(--secondary-bg);
   border-radius: 10px;
   padding-block: 1px;
+  box-shadow: -2px 2px 8px #0004;
 }
 .post .top-bar {
   display: flex;
@@ -67,8 +68,6 @@ main::-webkit-scrollbar {
 }
 .interactions > div {
   padding: 15px;
-}
-.interactions > div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -109,13 +108,14 @@ span.l-span {
 }
 
 .left .add-comment {
-  margin-block: 15px;
+  margin: 19px 4px;
   padding: 7px;
   background-color: var(--primary-bg);
   border-radius: 30px;
   display: flex;
   align-items: center;
   gap: 12px;
+  box-shadow: -2px 2px 8px #0004;
 }
 .add-comment input {
   width: 100%;
@@ -148,16 +148,20 @@ span.l-span {
 
 .all-comments {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .comment-card {
   background-color: var(--secondary-bg);
   padding: 10px;
-  margin: 10px;
-  width: 47%;
+  /* width: 50%; */
+  width: calc(50% - 20px);
   overflow: hidden;
+  box-shadow: -2px 2px 8px #0004;
+  border-radius: 8px;
 }
 .comment-card .comment-text {
   margin: 10px;
@@ -183,6 +187,7 @@ span.l-span {
   position: relative;
   transition: all ease 0.3s;
   cursor: pointer;
+  box-shadow: -2px 2px 8px #0004;
 }
 .post-container * {
   transition: all ease 0.3s;

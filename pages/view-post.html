@@ -169,7 +169,9 @@
                 <h4>69</h4>
               </div>
               <div class="comment">
-                <span class="material-symbols-outlined"> comment </span>
+                <a href="#comment-input">
+                  <span class="material-symbols-outlined"> comment </span>
+                </a>
                 <h4>69</h4>
               </div>
               <div class="share">
@@ -183,32 +185,18 @@
           </div>
         </div>
         <div class="add-comment">
-          <input type="text" placeholder="Add your comment ..." />
+          <input
+            type="text"
+            placeholder="Add your comment ..."
+            id="comment-input"
+          />
           <div class="send-btn">
             <span class="material-symbols-outlined"> send </span>
           </div>
         </div>
         <h2>Comments</h2>
         <div class="all-comments">
-          <div class="comment-card">
-            <div class="dp-name">
-              <img src="${userData["profile-img"]}" />
-              <h4>${userData["first-name"]} ${userData["last-name"]}</h4>
-            </div>
-            <div class="comment-text">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
-              dolor non repellat?
-            </div>
-          </div>
-          <div class="comment-card">
-            <div class="dp-name">
-              <img src="${userData["profile-img"]}" />
-              <h4>${userData["first-name"]} ${userData["last-name"]}</h4>
-            </div>
-            <div class="comment-text">
-              Lorem ipsum dolor sit. Mollitia dolor non repellat?
-            </div>
-          </div>
+          <h2>No Comments</h2>
         </div>
       </div>
 
