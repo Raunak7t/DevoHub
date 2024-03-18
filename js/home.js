@@ -37,16 +37,44 @@ function updateCPS(data) {
   ).innerText = `${data["first-name"]} ${data["last-name"]}`;
 }
 
-function showPosts() {
-  firebase
-    .firestore()
-    .collection("posts")
-    .onSnapshot((posts) => {
-      postsDiv.innerHTML = "";
-      posts.forEach((post) => {
-        getPostCreater(post.data());
+let curCategory = document.getElementById("trending");
+function changeCategory(query) {
+  showPosts(query);
+
+  curCategory?.classList.remove("active");
+  curCategory = document.getElementById(query);
+  console.log(curCategory);
+  curCategory.classList.add("active");
+}
+
+function showPosts(query = undefined) {
+  if (query) {
+    firebase
+      .firestore()
+      .collection("posts")
+      .where("category", "==", query)
+      .onSnapshot((posts) => {
+        postsDiv.innerHTML = "";
+        if (posts.docs.length != 0) {
+          posts.forEach((post) => {
+            getPostCreater(post.data());
+          });
+        } else {
+          postsDiv.innerHTML = "<h1>No posts</h1>";
+        }
       });
-    });
+  } else {
+    firebase
+      .firestore()
+      .collection("posts")
+      .orderBy("date", "desc")
+      .onSnapshot((posts) => {
+        postsDiv.innerHTML = "";
+        posts.forEach((post) => {
+          getPostCreater(post.data());
+        });
+      });
+  }
 
   function getPostCreater(postData) {
     firebase
@@ -64,6 +92,14 @@ function showPosts() {
     postCard.addEventListener("click", () => {
       expandPost(postData.id);
     });
+    let isLiked = false;
+
+    for (let likeIndex = 0; likeIndex < postData["likes"].length; likeIndex++) {
+      if (postData["likes"][likeIndex] === uid) {
+        isLiked = true;
+      }
+    }
+
     postCard.innerHTML = `
     <div class="top-row">
       <div class="dp-name">
@@ -79,8 +115,11 @@ function showPosts() {
       <h4 class="title">
       ${postData["title"]}
       </h4>
-      <div class="likes">
-        <span class="material-symbols-outlined"> favorite </span>${postData["likes"].length}
+      <div class="likes ${isLiked ? "liked" : ""}">
+        <span class="material-symbols-outlined l-span"> relax </span>
+        <span class="material-symbols-outlined n-span"> favorite </span>${
+          postData["likes"].length
+        }
       </div>
     </div>
     `;

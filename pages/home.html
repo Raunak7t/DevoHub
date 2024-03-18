@@ -184,14 +184,34 @@
         </div>
 
         <div class="category-bar">
-          <div class="category active">Trending</div>
-          <div class="category">Websites</div>
-          <div class="category">AI</div>
-          <div class="category">Fun</div>
-          <div class="category">Data Science</div>
-          <div class="category">Data Science</div>
-          <div class="category">Data Science</div>
-          <div class="category">Data Science</div>
+          <div
+            class="category active"
+            id="trending"
+            onclick="location.reload()"
+          >
+            Trending
+          </div>
+          <div
+            class="category"
+            id="Websites"
+            onclick="changeCategory('Websites')"
+          >
+            Websites
+          </div>
+          <div class="category" id="AI" onclick="changeCategory('AI')">AI</div>
+          <div class="category" id="Fun" onclick="changeCategory('Fun')">
+            Fun
+          </div>
+          <div
+            class="category"
+            id="Data Science"
+            onclick="changeCategory('Data Science')"
+          >
+            Data Science
+          </div>
+          <div class="category" id="Other" onclick="changeCategory('Other')">
+            Other
+          </div>
         </div>
 
         <div class="posts">

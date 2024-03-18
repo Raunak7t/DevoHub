@@ -41,7 +41,7 @@ main::-webkit-scrollbar {
   position: relative;
 }
 .post .img-container {
-  background-image: linear-gradient(20deg, #dd61ff73, #6097ff7a),
+  background-image: linear-gradient(20deg, #dd61ff60, #6098ff60),
     url(../assets/bg-7.jpg);
   background-position: center;
   background-size: cover;

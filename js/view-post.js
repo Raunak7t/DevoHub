@@ -46,7 +46,7 @@ function fillPostData(postData, userData) {
 
   postCategory.innerHTML = postData["category"];
   postImg.src = postData["imgURL"];
-  postImgCon.style.backgroundImage = `linear-gradient(20deg, #dd61ff73, #6097ff7a)
+  postImgCon.style.backgroundImage = `linear-gradient(20deg, #dd61ff60, #6098ff60)
   , url(${postData["imgURL"]})`;
 
   likeCount.innerText = postData["likes"].length;
