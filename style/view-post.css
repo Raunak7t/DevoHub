@@ -42,7 +42,7 @@ main::-webkit-scrollbar {
 }
 .post .img-container {
   background-image: linear-gradient(20deg, #dd61ff60, #6098ff60),
-    url(../assets/bg-7.jpg);
+    url(https://firebasestorage.googleapis.com/v0/b/devohub7.appspot.com/o/DHDP.png?alt=media&token=d14ac81d-9f24-4fd3-b445-75364e277053);
   background-position: center;
   background-size: cover;
   height: 25vw;
@@ -176,10 +176,10 @@ span.l-span {
   overflow-y: scroll;
 }
 .right > h3 {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .post-container {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   background: var(--secondary-bg);
   border-radius: 8px;
   color: var(--primary-txt-clr);
@@ -227,7 +227,7 @@ span.l-span {
 }
 .post-container .down-row {
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
   padding: 8px;
@@ -241,6 +241,18 @@ span.l-span {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+}
+.likes.liked .n-span {
+  display: none;
+}
+.likes.liked .l-span {
+  display: inline;
+}
+.likes span.l-span {
+  display: none;
+  color: rgb(255, 36, 109);
+  font-weight: 900;
+  font-size: 1.7rem;
 }
 
 .post-container:hover {

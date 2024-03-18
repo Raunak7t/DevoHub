@@ -125,6 +125,11 @@ main {
   padding: 5px 15px;
   border-radius: 50px;
   border: 1px solid var(--primary-txt-clr);
+  cursor: pointer;
+  transition: all ease 0.2s;
+}
+.category:hover {
+  opacity: 0.5;
 }
 .category.active {
   background: linear-gradient(45deg, var(--accent-clr), var(--accent-clr-2));
@@ -137,18 +142,19 @@ main {
 .posts {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
-  padding-block: 20px;
+  gap: 30px;
+  padding-block: 30px;
 }
 
 .post-container {
-  width: 48%;
+  width: 45%;
   background: var(--secondary-bg);
-  border-radius: 8px;
+  border-radius: 10px;
   color: var(--primary-txt-clr);
+  box-shadow: -2px 2px 8px #0004;
   overflow: hidden;
   position: relative;
   transition: all ease 0.3s;
@@ -196,11 +202,10 @@ main {
 }
 .post-container .down-row {
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
   padding: 8px;
-  padding-bottom: 12px;
 }
 .down-row .title {
   text-wrap: nowrap;
@@ -251,6 +256,7 @@ main {
   background: var(--secondary-bg);
   border-radius: 6px;
   padding: 10px;
+  box-shadow: -2px 2px 8px #0004;
 }
 .write-post-container h3 {
   margin-right: 20px;

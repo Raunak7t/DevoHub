@@ -17,6 +17,8 @@ const commentInput = document.querySelector("#comment-input");
 const sendCommentBtn = document.querySelector(".send-btn");
 const allComments = document.querySelector(".all-comments");
 
+const postsDiv = document.querySelector(".posts");
+
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     uid = user.uid;
@@ -34,6 +36,7 @@ firebase.auth().onAuthStateChanged((user) => {
             userData = data.data();
             fillPostData(postData, userData);
           });
+        showPosts(postData["category"]);
       });
   } else {
     // window.location.assign("../index.html");
@@ -136,3 +139,87 @@ sendCommentBtn.addEventListener("click", () => {
       });
   }
 });
+
+function showPosts(query) {
+  if (query) {
+    firebase
+      .firestore()
+      .collection("posts")
+      .where("category", "==", query)
+      .onSnapshot((posts) => {
+        postsDiv.innerHTML = "";
+        if (posts.docs.length > 1) {
+          posts.forEach((post) => {
+            getPostCreater(post.data());
+          });
+        } else {
+          postsDiv.innerHTML = "<h1>No more related posts</h1>";
+        }
+      });
+  } else {
+    firebase
+      .firestore()
+      .collection("posts")
+      .orderBy("date", "desc")
+      .onSnapshot((posts) => {
+        postsDiv.innerHTML = "";
+        posts.forEach((post) => {
+          getPostCreater(post.data());
+        });
+      });
+  }
+
+  function getPostCreater(postData) {
+    if (postData.id != postID) {
+      firebase
+        .firestore()
+        .collection("users")
+        .doc(postData.uid)
+        .onSnapshot((user) => {
+          addPostCard(user.data(), postData);
+        });
+    }
+  }
+
+  function addPostCard(userData, postData) {
+    let postCard = document.createElement("div");
+    postCard.classList.add("post-container");
+    postCard.addEventListener("click", () => {
+      expandPost(postData.id);
+    });
+    let isLiked = false;
+
+    for (let likeIndex = 0; likeIndex < postData["likes"].length; likeIndex++) {
+      if (postData["likes"][likeIndex] === uid) {
+        isLiked = true;
+      }
+    }
+
+    postCard.innerHTML = `
+    <div class="top-row">
+      <div class="dp-name">
+        <img src="${userData["profile-img"]}" />
+        <h3>${userData["first-name"]} ${userData["last-name"]}</h3>
+      </div>
+    </div>
+    <div class="main-img">
+      <img src="${postData["imgURL"]}" alt="post" />
+    </div>
+    <div class="down-row">
+      <h4 class="title">
+      ${postData["title"]}
+      </h4>
+      <div class="likes ${isLiked ? "liked" : ""}">
+        <span class="material-symbols-outlined l-span"> relax </span>
+        <span class="material-symbols-outlined n-span"> favorite </span>${
+          postData["likes"].length
+        }
+      </div>
+    </div>
+    `;
+    postsDiv.appendChild(postCard);
+  }
+  function expandPost(id) {
+    window.location = "./view-post.html?id=" + id;
+  }
+}
