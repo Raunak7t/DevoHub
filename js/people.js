@@ -1,5 +1,4 @@
 const usersDiv = document.querySelector(".users");
-console.log(usersDiv);
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
